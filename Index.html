@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gracias por querer sumarte | Ayudemos a Venezuela</title>
+  <meta name="description" content="Gracias por tu interés en sumarte como voluntario/a. Los cupos ya están cubiertos, pero todavía puedes ayudar compartiendo la campaña y difundiendo la recepción de medicamentos e insumos médicos.">
+  <meta property="og:title" content="Gracias por querer sumarte | Ayudemos a Venezuela">
+  <meta property="og:description" content="Los cupos de voluntariado ya están cubiertos. Puedes seguir ayudando compartiendo la campaña y difundiendo la recepción de medicamentos e insumos médicos.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b3f86">
+  <style>
+    :root{
+      --blue:#0b3f86;
+      --blue-dark:#062b60;
+      --blue-soft:#edf5ff;
+      --yellow:#f6c500;
+      --red:#d5242f;
+      --white:#ffffff;
+      --ink:#1f2a44;
+      --muted:#62718a;
+      --line:#dbe7f7;
+      --shadow:0 20px 55px rgba(11,63,134,.16);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(246,197,0,.22), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(213,36,47,.12), transparent 30%),
+        #f7f9fc;
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .flag-strip{width:100%;position:fixed;top:0;left:0;z-index:10;box-shadow:0 8px 22px rgba(0,0,0,.16)}
+    .flag-strip div{height:7px}.flag-yellow{background:var(--yellow)}.flag-blue{background:var(--blue);height:14px!important;color:#fff;text-align:center;font-size:10px;letter-spacing:8px;line-height:14px}.flag-red{background:var(--red)}
+    .page{min-height:100vh;padding:80px 18px 34px;display:flex;align-items:center;justify-content:center}
+    .shell{width:min(1040px,100%)}
+    .hero-card{
+      overflow:hidden;
+      border-radius:32px;
+      background:var(--white);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(11,63,134,.10);
+    }
+    .hero-head{
+      position:relative;
+      padding:42px 34px 38px;
+      color:#fff;
+      background:
+        linear-gradient(135deg, rgba(11,63,134,.98), rgba(6,43,96,.96)),
+        radial-gradient(circle at 88% 18%, rgba(246,197,0,.42), transparent 28%);
+    }
+    .hero-head:after{
+      content:"";
+      position:absolute;
+      inset:auto -80px -120px auto;
+      width:260px;height:260px;border-radius:50%;
+      background:rgba(246,197,0,.13);
+    }
+    .kicker{margin:0 0 12px;color:var(--yellow);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    h1{margin:0;font-size:clamp(34px,6vw,64px);line-height:1.02;letter-spacing:-.04em;color:#fff}
+    .subtitle{max-width:760px;margin:18px 0 0;font-size:clamp(17px,2.4vw,22px);line-height:1.55;color:#eaf2ff}
+    .content{padding:34px;display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
+    .message-card,.action-card,.social-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 12px 35px rgba(11,63,134,.08);
+    }
+    .message-card{padding:30px}
+    .badge{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:9px 14px;border-radius:999px;
+      background:#fff8dc;color:#624a00;border:1px solid rgba(246,197,0,.55);
+      font-size:14px;font-weight:800;margin-bottom:18px
+    }
+    h2{margin:0 0 14px;color:var(--blue);font-size:clamp(24px,3vw,34px);line-height:1.18;letter-spacing:-.02em}
+    p{margin:0 0 16px}.lead{font-size:18px;color:#34425b}.strong{font-weight:800;color:var(--blue-dark)}
+    .side{display:grid;gap:18px}
+    .action-card{padding:26px;background:linear-gradient(180deg,#ffffff,#f9fcff)}
+    .icon{width:58px;height:58px;border-radius:18px;background:var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:14px;border:1px solid var(--line)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;
+      border:none;border-radius:16px;padding:16px 20px;text-decoration:none;font-weight:900;
+      letter-spacing:.02em;text-transform:uppercase;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 0 var(--yellow), 0 16px 30px rgba(11,63,134,.22)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--yellow), 0 20px 36px rgba(11,63,134,.28);background:#073876}
+    .social-card{padding:22px;background:#0b3f86;color:#fff}
+    .social-card h3{margin:0 0 8px;font-size:21px}.social-card p{color:#eaf2ff;font-size:15px}
+    .social-links{display:grid;gap:10px;margin-top:14px}
+    .social-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:13px 14px;border-radius:14px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);font-weight:800;color:#fff}
+    .social-links a:hover{background:rgba(255,255,255,.16)}
+    .quote{margin-top:22px;padding:18px 20px;border-left:6px solid var(--red);background:#fff7f8;border-radius:16px;color:#5a1f25;font-weight:700}
+    footer{text-align:center;padding:0 18px 28px;color:var(--muted);font-size:14px}.footer-brand{font-weight:900;color:var(--blue);margin-top:6px}
+    @media (max-width:760px){.page{padding-top:70px;align-items:flex-start}.content{grid-template-columns:1fr;padding:22px}.hero-head{padding:34px 22px}.message-card,.action-card,.social-card{padding:22px}.flag-blue{letter-spacing:6px}.btn{font-size:14px}}
+  </style>
+</head>
+<body>
+  <div class="flag-strip" aria-hidden="true">
+    <div class="flag-yellow"></div>
+    <div class="flag-blue">★ ★ ★ ★ ★ ★ ★</div>
+    <div class="flag-red"></div>
+  </div>
+
+  <main class="page">
+    <section class="shell hero-card" aria-labelledby="titulo">
+      <div class="hero-head">
+        <p class="kicker">Ayudemos a Venezuela</p>
+        <h1 id="titulo">¡Gracias por querer sumarte!</h1>
+        <p class="subtitle">Tu disposición para ayudar nos emociona. En este momento, los cupos de voluntariado para la recepción de donaciones ya están cubiertos.</p>
+      </div>
+
+      <div class="content">
+        <article class="message-card">
+          <span class="badge">🤝 Voluntariado organizado</span>
+          <h2>Ya contamos con el equipo necesario</h2>
+          <p class="lead">Nos emociona profundamente la cantidad de personas que se ofrecieron como voluntarias para colaborar con esta campaña.</p>
+          <p>Gracias al enorme compromiso de la comunidad, <span class="strong">ya contamos con el equipo necesario para cubrir los turnos de recepción, registro, control, clasificación y resguardo de las donaciones.</span></p>
+          <p>Queremos agradecerte de corazón por tu disposición y por haber querido formar parte de esta iniciativa solidaria. Tu voluntad de ayudar también hace la diferencia.</p>
+          <div class="quote">La solidaridad necesita corazón, pero también orden, responsabilidad y compromiso.</div>
+        </article>
+
+        <aside class="side" aria-label="Formas de seguir ayudando">
+          <div class="action-card">
+            <div class="icon">💙</div>
+            <h2>¿Cómo puedes seguir ayudando?</h2>
+            <p>Hoy la necesidad más importante es que más personas conozcan la campaña y puedan acercar medicamentos e insumos médicos prioritarios.</p>
+            <p>Compartir la información también es una forma concreta de ayudar.</p>
+            <a class="btn btn-primary" href="https://kahtrinmelinger.github.io/Medicamentoseinsumos/" target="_blank" rel="noopener">Ver qué donar</a>
+          </div>
+
+          <div class="social-card">
+            <h3>Compartí nuestras redes</h3>
+            <p>Podés ayudarnos difundiendo las publicaciones oficiales de la campaña.</p>
+            <div class="social-links">
+              <a href="https://www.instagram.com/sociedadvenezolanabb" target="_blank" rel="noopener"><span>@sociedadvenezolanabb</span><span>↗</span></a>
+              <a href="https://www.instagram.com/venezolanosenbahia" target="_blank" rel="noopener"><span>@venezolanosenbahia</span><span>↗</span></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>Gracias por acompañarnos. Juntos podemos hacer que la ayuda llegue donde más se necesita.</div>
+    <div class="footer-brand">Sociedad Venezolana en Bahía Blanca</div>
+  </footer>
+</body>
+</html>
